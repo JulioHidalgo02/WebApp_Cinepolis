@@ -1,0 +1,21 @@
+﻿@model WebApp_Cinepolis.Entities.Director
+<div class="card mb-4" id="forms">
+    <div class="card-header">Agregar Director</div>
+    <div class="card-body">
+        @using (Html.BeginForm("AgregarDirector", "Director", FormMethod.Post))
+        {
+            <div class="mb-3">
+                <label class="form-label" >Nombre</label>
+                @Html.TextBoxFor(Model => Model.Nombre, new { @class = "form-control", required = "required" })
+                <div class="form-text"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" >Biografia</label>
+                @Html.TextAreaFor(Model => Model.Biografia, new { @class = "form-control", required = "required" })
+            </div>
+            <button class="btn btn-primary" type="submit">Agregar Director</button>
+        }
+
+
+    </div>
+</div>

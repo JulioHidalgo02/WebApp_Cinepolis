@@ -1,0 +1,22 @@
+﻿@model WebApp_Cinepolis.Entities.Director
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <!-- PRODUCT DETAILS-->
+            <div class="col-lg-6">
+                <h1>@Model.Nombre</h1>
+                <h2>Biografía</h2>
+                <p class="text-sm mb-4">@Model.Biografia</p>
+                <div class="row align-items-stretch mb-4">
+                    <div class="col-sm-5 pr-sm-0">
+                    </div>
+                    <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="@Url.Action("EditarDirector","Director", new {id = Model.Id})">Editar</a></div>
+                    <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="@Url.Action("EliminarDirector","Director", new {id = Model.Id})">Eliminar</a></div>
+                </div>
+                <div class="d-block mb-3 position-relative"><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="~/img/logo_cine.jpg" alt="..."></a></div>
+            </div>
+           
+        </div>
+       
+            </div>
+</section>

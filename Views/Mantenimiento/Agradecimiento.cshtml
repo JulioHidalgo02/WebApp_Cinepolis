@@ -1,0 +1,28 @@
+﻿@model WebApp_Cinepolis.Entities.Agradecimiento;
+@{
+    ViewData["Title"] = "Agradecimiento";
+}
+
+<div class="card mb-4" id="tables">
+    <div class="card-header">Detalle de la Compra</div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Cine</th>
+                    <th>Película</th>
+                    <th>Sala</th>
+                    <th>Combo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Cine</td>
+                    <td>@Model.Pelicula</td>
+                    <td>@Model.Sala</td>
+                    <td>@Model.Combo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

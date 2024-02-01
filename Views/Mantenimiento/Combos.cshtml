@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApp_Cinepolis.Entities.Combo>
+<div class="page-holder">
+
+
+    <section class="py-5">
+        <div class="container p-0">
+            <h2 class="h5 text-uppercase mb-4">Combos Disponibles</h2>
+            <div class="row">
+                @foreach (var combos in Model)
+                {
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <div class="badge text-white bg-"></div><a class="d-block" href="@Url.Action("DetalleCombos","Mantenimiento", new{id = combos.idCombo})"><img class="img-fluid w-100" src="~/img/logo_cine.jpg" alt="..."></a>
+                            </div>
+                            <h6> <a class="reset-anchor" href="detail.html"> @combos.idCombo</a></h6>
+                            <p class="small text-muted">₡ @combos.precio.ToString("0.##")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+</div>

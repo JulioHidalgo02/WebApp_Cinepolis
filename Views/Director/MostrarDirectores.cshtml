@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApp_Cinepolis.Entities.Director>
+
+<div class="page-holder">
+
+    <div class="col-sm-3 pl-sm-0"><a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="@Url.Action("AgregarDirector","Director")">Agregar Director</a></div>
+    <section class="py-5">
+        <div class="container p-0">
+            <h2 class="h5 text-uppercase mb-4">Directores de Cine</h2>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <div class="badge text-white bg-"></div><a class="d-block" href="@Url.Action("MostrarDirector","Director", new{id = item.Id})"><img class="img-fluid w-100" src="~/img/logo_cine.jpg" alt="..."></a>
+                            </div>
+                            <h6> <a class="reset-anchor" href="detail.html"> @item.Nombre</a></h6>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        
+    </section>
+
+</div>

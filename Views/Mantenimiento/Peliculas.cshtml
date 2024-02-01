@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApp_Cinepolis.Entities.Pelicula>
+<div class="page-holder">
+
+
+    <section class="py-5">
+        <div class="container p-0">
+            <h2 class="h5 text-uppercase mb-4">Peliculas Disponibles</h2>
+            <div class="row">
+                @foreach (var peliculas in Model)
+                {
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="product text-center">
+                            <div class="position-relative mb-3">
+                                <div class="badge text-white bg-"></div><a class="d-block" href="@Url.Action("Horarios","Mantenimiento", new{id = peliculas.IdPelicula})"><img class="img-fluid w-100" src="~/img/logo_cine.jpg" alt="..."></a>
+                            </div>
+                            <h2> <a class="reset-anchor" href="detail.html">Nombre: @peliculas.Nombre</a></h2>
+                            <h6> <a class="reset-anchor" href="detail.html">Genero: @peliculas.Genero</a></h6>
+                            <h6> <a class="reset-anchor" href="detail.html">Actores: @peliculas.Actores</a></h6>
+                            @if(peliculas.Resumen.ToLower().Contains("hola amiguitos"))
+                            {
+                                <h5>Apto para niños</h5>
+                            }
+                            else
+                            {
+                                <h5>No apto para niños</h5>
+                                <h6>Acciones: @peliculas.Acciones</h6>
+                            }
+                           
+                                <p class="small">Resumen: @peliculas.Resumen</p>
+                            <p class="small text-muted">Sala: @peliculas.IdSala</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+</div>
